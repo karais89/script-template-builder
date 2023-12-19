@@ -1,0 +1,10 @@
+using System;
+using Cysharp.Threading.Tasks;
+using Reflex.Attributes;
+using UniRx;
+using UnityEngine;
+
+public class @Template@Presenter : MonoBehaviour, I@Template@Contract.IPresenter
+{
+    [Inject] I@Template@Contract.IUseCase _useCase;
+}

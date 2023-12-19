@@ -1,0 +1,12 @@
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+
+public class @Template@UseCase : I@Template@Contract.IUseCase
+{
+    private I@Template@Contract.IGateway _gateway;
+
+    public @Template@UseCase(I@Template@Contract.IGateway gateway)
+    {
+        _gateway = gateway;
+    }
+}

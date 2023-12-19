@@ -1,0 +1,7 @@
+using System;
+using UnityEngine;
+
+public class @Template@Gateway : I@Template@Contract.IGateway
+{
+
+}

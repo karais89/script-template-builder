@@ -1,0 +1,15 @@
+// 프리팹에 할당
+using Reflex.Core;
+using UnityEngine;
+
+public class @Template@Installer : MonoBehaviour, IInstaller
+{
+    public @Template@Presenter presenter;
+
+    public void InstallBindings(ContainerDescriptor descriptor)
+    {
+        descriptor.AddSingleton(typeof(@Template@UseCase), typeof(I@Template@Contract.IUseCase));
+        descriptor.AddSingleton(typeof(@Template@Gateway), typeof(I@Template@Contract.IGateway));
+        descriptor.AddSingleton(presenter, typeof(I@Template@Contract.IPresenter));
+    }
+}

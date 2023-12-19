@@ -1,0 +1,14 @@
+using Reflex.Attributes;
+using UniRx;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class @Template@View : MonoBehaviour
+{
+    [Inject] I@Template@Contract.IPresenter _presenter;
+
+    private void Start()
+    {
+
+    }
+}

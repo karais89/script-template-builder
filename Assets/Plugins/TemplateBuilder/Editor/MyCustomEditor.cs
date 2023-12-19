@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -28,7 +29,7 @@ public class MyCustomEditor : EditorWindow
         button.clicked += () =>
         {
             Debug.Log("butotn Clicked");
-            CreateScriptFromTemplate();
+            CreateSCAFromTemplate();
         };
         root.Add(button);
     }
@@ -76,5 +77,61 @@ public class MyCustomEditor : EditorWindow
         AssetDatabase.Refresh();
 
         Debug.Log("Script created: " + newScriptPath);
+    }
+
+    private void CreateSCAFromTemplate()
+    {
+        Debug.Log("CreateSCAFromTemplate");
+
+        // todo: 폴더에 있는 모든 파일 변경.
+        const string folderPath
+#if DEBUG_COM_LONPEACH_TEMPLATE
+        = "Assets/Plugins/TemplateBuilder/Editor/Template/SCA/";
+#else
+        = "Packages/com.lonpeach.template-builder/Editor/Template/SCA/";
+#endif
+
+        const string outputPath = "Assets/Scripts/";
+
+        if (!Directory.Exists(folderPath))
+        {
+            return;
+        }
+
+        string[] files = Directory.GetFiles(folderPath, "*.template", SearchOption.AllDirectories)
+                            .Where(file => !file.EndsWith(".meta"))
+                            .ToArray();
+
+        // todo: 사용자가 원하는 스크립트 명으로 변경
+        var inputName = "aaa" + Random.Range(0, 100);
+
+        foreach (string file in files)
+        {
+            var relativePath = file.Replace(folderPath, "");
+            Debug.Log("file: " + relativePath);
+
+            // string templateContent = File.ReadAllText(file);
+            // string fileName = Path.GetFileNameWithoutExtension(file).Replace("Template", inputName);
+            // templateContent = templateContent.Replace("@Template@", inputName);
+
+            // // 새로운 스크립트 파일 생성
+            // string newScriptPath = outputPath + fileName + ".cs";
+
+            // if (!Directory.Exists(outputPath))
+            // {
+            //     Directory.CreateDirectory(outputPath);
+            // }
+
+            // if (File.Exists(newScriptPath))
+            // {
+            //     Debug.LogError("Script with the same name already exists!");
+            //     return;
+            // }
+
+            // File.WriteAllText(newScriptPath, templateContent);
+            // Debug.Log("Script created: " + newScriptPath);
+        }
+
+        AssetDatabase.Refresh();
     }
 }

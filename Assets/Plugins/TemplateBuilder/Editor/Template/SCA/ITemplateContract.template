@@ -1,0 +1,17 @@
+using System;
+using UnityEngine;
+
+public interface I@Template@Contract
+{
+    interface IUseCase
+    {
+    }
+
+    interface IPresenter
+    {
+    }
+
+    interface IGateway
+    {
+    }
+}
