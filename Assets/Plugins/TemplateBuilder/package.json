@@ -1,7 +1,19 @@
 {
   "name": "com.lonpeach.template-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "displayName": "Template Builder",
   "description": "This is an template Builder",
-  "unity": "2020.3"
+  "unity": "2020.3",
+  "samples": [
+    {
+        "displayName": "Sample Test1",
+        "description": "Contains sample shaders for the High Definition render pipeline",
+        "path": "Samples~/SamplesTest1"
+    },
+    {
+        "displayName": "Sample Test2",
+        "description": "Contains sample shaders for the Universal render pipeline",
+        "path": "Samples~/SamplesTest2"
+    }
+  ]
 }
