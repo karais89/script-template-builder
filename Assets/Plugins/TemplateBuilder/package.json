@@ -1,6 +1,6 @@
 {
   "name": "com.lonpeach.template-builder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "displayName": "Template Builder",
   "description": "This is an template Builder",
   "unity": "2020.3",
@@ -14,6 +14,6 @@
         "displayName": "Sample Test2",
         "description": "Contains sample shaders for the Universal render pipeline",
         "path": "Samples~/SamplesTest2"
-    }햐
+    }
   ]
 }
